@@ -5,8 +5,6 @@
 
 ## Steps 
 
-1. Navigate to your `MyPractice/lab-project` folder.
-
 1. If you successfully completed the last exercise, continue with your project. Otherwise copy the solution from the last exercise.
 
 1. Look at the Libs directory for Part5-4 and its middleware directory. Copy the `fetch-user.js` into your middleware directory.

@@ -140,35 +140,8 @@
 1. Change the require of the student router to pass the state to the student roter module like this:
 	``` const students = require('./routes/students')(state); ```
 
-1. Change the `routes/students.js` file to the structure below...it removes the hard-coded students, and changes the module.exports to a function that accepts {db}, and now uses the express-promise-router:
+1. Change your `routes/students.js` file by copying over it the contents that is in `\Lib\Part4-1\students.js` ...this removes the hard-coded students, and changes the module.exports to a function that accepts {db}, and now uses the express-promise-router.
 	
-	```javascript
-	const expressPromiseRouter = require("express-promise-router");
-	const Promise = require("bluebird");
-	const moment = require('moment');
-	const router = expressPromiseRouter();
-	
-	module.exports = function({db}) {
-		
-	router.get("/",  (req, res) => {
-		return Promise.try(() => {
-			return db("students");
-		}).map((student) => { //process each student
-			student.fullName = student.nameFirst + ' ' + student.nameLast;
-			student.hireDate = moment(student.hireDate, "MM/DD/YYYY")
-			return student;
-		}).then((students) => {
-			res.render("students", {
-				students: students
-			});
-		}).catch(err => {
-			res.render("students", {
-				students: null
-			});
-	       });
-	});
-	```
-
 1. Confirm with the pgAdmin client that you have a studentmanagement database with a student table containing records. 
 
 1. Test your changes in the browser, by clicking on the student link do you see the student records from the database?

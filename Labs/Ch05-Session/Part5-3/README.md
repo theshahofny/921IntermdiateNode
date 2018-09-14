@@ -10,11 +10,9 @@
 
 ### Setup /register routes
 
-1. Navigate to your `MyPractice/lab-project` folder.
-
 1. If you successfully completed the last exercise, continue with your project. Otherwise copy the solution from the last exercise.
 
-1. Copy the register.pug from `/Libs/Part5-3` into this project's `/views/admin` directory.
+1. Copy the `register.pug` from `/Libs/Part5-3` into this project's `/views/admin` directory.
 
 1. In the `index.js` route, add a route handler for `/register` that causes the admin/register page to render. 
 	``` javascript

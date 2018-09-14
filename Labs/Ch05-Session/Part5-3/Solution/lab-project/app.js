@@ -19,9 +19,6 @@ var app = express();
 
 app.use(knexLogger(db));
 
-const expressPromiseRouter = require("express-promise-router");
-const router = expressPromiseRouter();
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -34,7 +31,8 @@ router.use(bodyParser.urlencoded({ extended: false }));
 router.use(cookieParser());
 router.use(express.static(path.join(__dirname, 'public')));
 
-
+const expressPromiseRouter = require("express-promise-router");
+const router = expressPromiseRouter();
 
 const unhandledError = require("unhandled-error");
 let crashOptions = {doNotCrash : true};
